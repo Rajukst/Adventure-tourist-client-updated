@@ -1,8 +1,6 @@
 import React from 'react';
 import { Container, FormControl, Nav, Navbar, Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import Home from '../../Home/Home';
-import Carosul from '../Carosul/Carosul';
 import './Navbar.css'
 const Header = () => {
     return (
@@ -16,9 +14,10 @@ const Header = () => {
         style={{ maxHeight: '100px' }}
         navbarScroll>
         <Link className="header-panel" to="/home">Home</Link>
-        <Link className="header-panel" to="/options">Options</Link>
+        <Link className="header-panel" to="/tourist-place">Tour</Link>
         <Link className="header-panel" to="/travel">Travel Guide</Link>
         <Link className="header-panel" to="/login">Login</Link>
+        <Link className="header-panel" to="/contact">Contact US</Link>
       </Nav>
       <Form className="d-flex">
         <FormControl
@@ -32,8 +31,6 @@ const Header = () => {
     </Navbar.Collapse>
   </Container>
 </Navbar>
-<Carosul></Carosul>
-<Home></Home>
         </div>
     );
 };
