@@ -15,11 +15,19 @@ const Header = () => {
         className="me-auto my-2 my-lg-0"
         style={{ maxHeight: '100px' }}
         navbarScroll>
+          <div>
+            <span className="header-panel text-warning">Adventure <span className="text-dark">Tourist</span> </span> 
+          </div>
+        <div>
         <Link className="header-panel" to="/home">Home</Link>
-        <Link className="header-panel" to="/tourist-place">Tour</Link>
-        <Link className="header-panel" to="/travel">Travel Guide</Link>
-        
-        <Link className="header-panel" to="/contact">Contact US</Link>
+        </div>
+      
+        {
+          user.email && <div>
+            <Link className="header-panel" to="/my-order">Your Booking</Link>
+          <Link className="header-panel" to="/manage">Manage Your Booking</Link>
+          </div>
+        }
       </Nav>
     </Navbar.Collapse>
     <div className="me-2 text-light">Logged As: {user.email}
