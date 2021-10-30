@@ -7,3 +7,6 @@
 .header-panel:hover{
     color: rgb(240, 76, 47);
 }
+.image-link{
+    border-radius: 50%;
+}

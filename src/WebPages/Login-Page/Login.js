@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../Hooks/useAuth';
-
+import "./Login.css"
 
 const Login = () => {
     const {signWithGoogle}= useAuth()
@@ -17,9 +17,9 @@ const Login = () => {
     }
     return (
         <div>
-            <h1>This is Login Page</h1>
-             <h1 className="mb-5">Please Login</h1>
-            <form>
+
+            <form className="login-form">
+            <h1 className="mb-5">Please Login</h1>
             <label htmlFor="email">Enter Your email:</label>
             <input  type="email" name="email" id="" placeholder="enter your email"  />
             <br /><br />
@@ -30,8 +30,9 @@ const Login = () => {
             <br /><br />
             <input type="submit" value="Sign In" name="Sign In" />
             <br /><br />
+            <Button onClick={googleLogIn} >Sign With Google</Button>
             </form>
-      <Button onClick={googleLogIn} >Sign With Google</Button>
+     
       <br /><br />
    
         </div>

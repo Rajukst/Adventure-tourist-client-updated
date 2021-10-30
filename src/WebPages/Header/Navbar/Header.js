@@ -25,7 +25,7 @@ const Header = () => {
     <div className="me-2 text-light">Logged As: {user.email}
             </div>
             <div className="imgage-div me-1">
-            <img src={user.photoURL} alt="" />
+            <img className="image-link" src={user.photoURL} alt="" />
             </div>
     {
       user.email ? <Button className="btn btn-warning" onClick={logOut} >Log Out</Button>
