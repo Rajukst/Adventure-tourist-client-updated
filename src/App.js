@@ -1,17 +1,20 @@
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
+import AuthProvider from './Context/AuthProvider';
 import Login from './WebPages/Contact-Page/Login';
 import ContactUs from './WebPages/Contact-Us/ContactUs';
 import Footer from './WebPages/Footer/Footer';
 import Header from './WebPages/Header/Navbar/Header';
 import Home from './WebPages/Home/Home';
+import PrivateRoute from './WebPages/PrivateRoute/PrivateRoute';
 import TouristPlace from './WebPages/Tourist-Place/TouristPlace';
 import TravelGuide from './WebPages/Travel-Guide/TravelGuide';
 
 function App() {
   return (
     <div>
+      <AuthProvider>
       <BrowserRouter>
       <Header></Header>
       <Switch>
@@ -24,9 +27,9 @@ function App() {
         <Route path="/tourist-place">
           <TouristPlace></TouristPlace>
         </Route>
-        <Route path="/travel">
+        <PrivateRoute path="/travel">
           <TravelGuide></TravelGuide>
-        </Route>
+        </PrivateRoute>
         <Route path="/login">
           <Login></Login>
         </Route>
@@ -36,6 +39,7 @@ function App() {
       </Switch>
       <Footer/>
       </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }

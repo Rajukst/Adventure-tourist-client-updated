@@ -1,8 +1,10 @@
 import React from 'react';
-import { Container, FormControl, Nav, Navbar, Button, Form } from 'react-bootstrap';
+import { Container, Nav, Navbar, Button} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../Hooks/useAuth';
 import './Navbar.css'
 const Header = () => {
+  const {user, logOut}= useAuth();
     return (
         <div>
             <Navbar bg="primary" expand="lg">
@@ -16,20 +18,22 @@ const Header = () => {
         <Link className="header-panel" to="/home">Home</Link>
         <Link className="header-panel" to="/tourist-place">Tour</Link>
         <Link className="header-panel" to="/travel">Travel Guide</Link>
-        <Link className="header-panel" to="/login">Login</Link>
+        
         <Link className="header-panel" to="/contact">Contact US</Link>
       </Nav>
-      <Form className="d-flex">
-        <FormControl
-          type="search"
-          placeholder="Search your Tour"
-          className="me-2"
-          aria-label="Search"
-        />
-        <Button variant="outline-warning">Search</Button>
-      </Form>
     </Navbar.Collapse>
+    <div className="me-2 text-light">Logged As: {user.email}
+            </div>
+            <div className="imgage-div me-1">
+            <img src={user.photoURL} alt="" />
+            </div>
+    {
+      user.email ? <Button className="btn btn-warning" onClick={logOut} >Log Out</Button>
+      :
+<Link className="header-panel" to="/login">Login</Link>
+    }
   </Container>
+  
 </Navbar>
         </div>
     );
