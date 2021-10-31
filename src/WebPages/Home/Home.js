@@ -6,7 +6,7 @@ import DynamicHome from './DynamicHome';
 const Home = () => {
 const [user, setUser]= useState([])
 useEffect(()=>{
-    fetch('http://localhost:5000/home')
+    fetch('https://bloodcurdling-hollow-23734.herokuapp.com/home')
     .then(res=>res.json())
     .then(data=>setUser(data))
         },[])

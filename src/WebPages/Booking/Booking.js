@@ -5,7 +5,7 @@ const Booking = () => {
     const [booking, setBooking]= useState({})
     const {serviceId}= useParams()
     useEffect(()=>{
-        const url= `http://localhost:5000/myBooking/${serviceId}`
+        const url= `https://bloodcurdling-hollow-23734.herokuapp.com/myBooking/${serviceId}`
        fetch(url)
        .then(res=>res.json())
        .then(data=>setBooking(data))

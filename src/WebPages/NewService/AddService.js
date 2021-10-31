@@ -18,7 +18,7 @@ const AddService = () => {
          const addedBooking= {addTour, addBudget, addSpot, addImg, myDesc};
          console.log(addedBooking);
 
-         fetch('http://localhost:5000/home',{
+         fetch('https://bloodcurdling-hollow-23734.herokuapp.com/home',{
              method:"POST",
              headers:{
                 'content-type': 'application/json'
