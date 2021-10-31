@@ -1,29 +1,33 @@
 import React, { useEffect, useState } from 'react';
-import { Row } from 'react-bootstrap';
+import { Row, Spinner } from 'react-bootstrap';
 import Carosul from '../Header/Carosul/Carosul';
 import DynamicHome from './DynamicHome';
 
 const Home = () => {
 const [user, setUser]= useState([])
 useEffect(()=>{
-    fetch('./Data.json')
+    fetch('http://localhost:5000/home')
     .then(res=>res.json())
     .then(data=>setUser(data))
         },[])
     return (
         <div>
-            
             <Carosul></Carosul>
-            <h1>This is home Route</h1>
-          
-            <Row xs={1} md={2} xl={4} className="g-4 m-5">
+            {user.length===0 ? <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+        </Spinner>:
+
+            <Row xs={1} md={2}xl={3} className="g-4 mb-5 m-2">
             {
-                user.map(singleData=><DynamicHome
-                key={singleData.id}
-                getData={singleData}
-                ></DynamicHome>)
+                user.map(singleUser=> <DynamicHome
+                key={singleUser._id}
+                getBooking= {singleUser}
+                ></DynamicHome> )
             }
             </Row>
+
+        }
+            
         </div>
     );
 };

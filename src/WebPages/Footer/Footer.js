@@ -2,8 +2,8 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div className="footer">
-            <h1>This is footer</h1>
+        <div className="footer text-center">
+            <p>CopyRight &copy; 2021. Adventure Tourist Agency</p>
         </div>
     );
 };

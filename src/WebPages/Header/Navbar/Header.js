@@ -24,8 +24,9 @@ const Header = () => {
       
         {
           user.email && <div>
-            <Link className="header-panel" to="/my-order">Your Booking</Link>
-          <Link className="header-panel" to="/manage">Manage Your Booking</Link>
+            <Link className="header-panel" to="/my-booking">Your Booking</Link>
+          <Link className="header-panel" to="/manage-booking">Manage Your Booking</Link>
+          <Link className="header-panel" to="/add-service">Add A New Booking</Link>
           </div>
         }
       </Nav>
