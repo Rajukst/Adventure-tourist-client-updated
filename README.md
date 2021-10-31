@@ -2,7 +2,7 @@
 
 ## Our Website Link
 
-[Visit Website] ()
+[Visit Website] (https://eager-bohr-85ea3b.netlify.app/)
 
 # Our Vision
 - Introducing everyone to the sea, archeology and nature.
